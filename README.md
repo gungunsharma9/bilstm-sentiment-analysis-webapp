@@ -22,7 +22,7 @@ The model accurately classifies text into the following six emotions:
 ```text
 ├── bilstm_emotion_classifier.ipynb   # BiLSTM emotion classifier for text sentiment analysis
 ├── app.py                        # Main Flask application script
-├── trainmodel.keras              # Saved trained BiLSTM model (not included because it increases GitHub size limitations)
+├── trainmodel.keras              # Saved trained BiLSTM model ((not included due to GitHub file size limitations))
 ├── tokenizer.json                # Saved tokenizer dictionary
 ├── static/
 │   └── bg.jpeg                   # Background image for the web app
