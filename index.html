@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <style>
+        body {
+            font-family: 'Algerian', serif;
+            background-image: url('{{ url_for("static", filename="bg.jpeg") }}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
+            height: 100vh;
+
+            /* Center the white box */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            background-color: #9fd9ff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .text-section {
+            flex: 1;
+            padding: 20px;
+            min-width: 300px;
+        }
+
+        .text-section h1 {
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color:  #d43f8d;
+        }
+
+        .text-section p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            text-align: top;
+            line-height: 1.6;
+        }
+
+        .form-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(128, 190, 235, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            min-width: 300px;
+        }
+
+        .form-section form {
+            width: 100%;
+            text-align: center;
+        }
+
+        .form-section label {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            font-family: Arial, sans-serif;
+            align-self: flex-start;
+        }
+
+        .form-section textarea {
+            width: 100%;
+            height: 100px;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            resize: none;
+        }
+
+        .form-section button {
+            background-color:  #d43f8d;
+            color: #9fd9ff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            align-self: center;
+        }
+
+        .form-section button:hover {
+            background-color:  #d43f8d;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .text-section, .form-section {
+                width: 100%;
+                padding: 10px;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-section">
+            <h1>Sentiment Analysis</h1>
+            <p style="color: #f04949"><font face="Times New Roman"><b>Analyze the sentiment of your text in just a few seconds. Enter your text below and find out whether the sentiment is sadness😥, joy😊, love❤️, anger😠, fear😨 or surprise😲.</b></font></p>
+        </div>
+        <div class="form-section">
+            <form action="/predict" method="post">
+                <label for="message"><b><font face="Algerian" color="#d43f8d">Enter your text:✨</font></b></label>
+                <textarea id="message" name="message" placeholder="Type your text here..." required></textarea>
+                <button type="submit"><font face="Times New Roman"><b>ANALYZE SENTIMENT😁</b></font></button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
